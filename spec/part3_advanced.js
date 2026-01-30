@@ -19,16 +19,16 @@
       };
       it("TEST ONLY: Access object values using bracket notation ", function () {
         //Use bracket notation for the FILL_ME_IN portion.
-        expect("Tommy").to.eql("Tommy");
-        expect("Oliver").to.eql("Oliver");
-        expect(16).to.eql(16);
+        expect(obj["firstName"]).to.eql("Tommy");
+        expect(obj["lastName"]).to.eql("Oliver");
+        expect(obj["age"]).to.eql(16);
       });
 
       it("TEST ONLY: Access object values using dot notation ", function () {
         //Use bracket notation for the FILL_ME_IN portion.
-        expect("Dragon").to.eql("Dragon");
-        expect("Green").to.eql("Green");
-        expect(true).to.eql(true);
+        expect(obj["zord"]).to.eql("Dragon");
+        expect(obj["suit"]).to.eql("Green");
+        expect(obj["inHighSchool"]).to.eql(true);
       });
     });
 
@@ -71,7 +71,7 @@
         { firstName: "Kimberly", lastName: "Ann Hart", suit: "Pink" },
       ];
       it("TEST ONLY: Access the value needed to pass the test", function () {
-        expect(rangers[0]).to.eql({
+        expect(rangers[3]).to.eql({
           firstName: "Billy",
           lastName: "Cranston",
           suit: "Blue",
@@ -81,12 +81,12 @@
           lastName: "Taylor",
           suit: "Black",
         });
-        expect(rangers[0].firstName).to.eql(FILL_ME_IN);
-        expect(FILL_ME_IN).to.eql("Black");
-        expect(rangers[2].lastName).to.eql(FILL_ME_IN);
-        expect(FILL_ME_IN).to.eql("Red");
-        expect(rangers[5].lastName).to.eql(FILL_ME_IN);
-        expect(FILL_ME_IN).to.eql("Billy");
+        expect(rangers[0].firstName).to.eql("Tommy");
+        expect(rangers[4].suit).to.eql("Black");
+        expect(rangers[2].lastName).to.eql("Kwan");
+        expect(rangers[1].suit).to.eql("Red");
+        expect(rangers[5].lastName).to.eql("Ann Hart");
+        expect(rangers[3].firstName).to.eql("Billy");
       });
     });
 
@@ -109,28 +109,28 @@
       };
       it("TEST ONLY: Access the value needed to pass the test", function () {
         //Use dot notation
-        expect(FILL_ME_IN).to.eql({
+        expect(rangers.black).to.eql({
           firstName: "Zack",
           lastName: "Taylor",
           zord: "Mastodon",
         });
         //Use bracket notation
-        expect(FILL_ME_IN).to.eql({
+        expect(rangers["red"]).to.eql({
           firstName: "Jason",
           lastName: "Lee",
           zord: "Tyrannosaurus",
         });
         //Use dot notation
-        expect(FILL_ME_IN).to.eql("Trini");
-        expect(FILL_ME_IN).to.eql("Dragon");
-        expect(FILL_ME_IN).to.eql("Cranston");
+        expect(rangers.yellow.firstName).to.eql("Trini");
+        expect(rangers.green.zord).to.eql("Dragon");
+        expect(rangers.blue.lastName).to.eql("Cranston");
         //Use bracket notation
-        expect(FILL_ME_IN).to.eql("Ann Hart");
-        expect(FILL_ME_IN).to.eql("Tyrannosaurus");
-        expect(FILL_ME_IN).to.eql("Zack");
+        expect(rangers["pink"]["lastName"]).to.eql("Ann Hart");
+        expect(rangers["red"]["zord"]).to.eql("Tyrannosaurus");
+        expect(rangers["black"]["firstName"]).to.eql("Zack");
         //Use a combination of dot and bracket notation to pass each test
-        expect(FILL_ME_IN).to.eql("Oliver");
-        expect(FILL_ME_IN).to.eql("Sabertooth Tiger");
+        expect(rangers["green"].lastName).to.eql("Oliver");
+        expect(rangers["yellow"].zord).to.eql("Sabertooth Tiger");
       });
     });
 
@@ -140,11 +140,11 @@
       let red = { firstName: "Jason", lastName: "Lee", zord: "Tyrannosaurus" };
       it("Should return Object's value using given key", function () {
         expect(_.objectValue(green, "zord")).to.eql("Dragon");
-        expect(_.objectValue(red, "zord")).to.eql(FILL_ME_IN);
-        expect(_.objectValue(green, "firstName")).to.eql(FILL_ME_IN);
-        expect(_.objectValue(red, "firstName")).to.eql(FILL_ME_IN);
-        expect(_.objectValue(FILL_ME_IN)).to.eql("Lee");
-        expect(_.objectValue(FILL_ME_IN)).to.eql("Oliver");
+        expect(_.objectValue(red, "zord")).to.eql("Tyrannosaurus");
+        expect(_.objectValue(green, "firstName")).to.eql("Tommy");
+        expect(_.objectValue(red, "firstName")).to.eql("Jason");
+        expect(_.objectValue(red, "lastName")).to.eql("Lee");
+        expect(_.objectValue(green, "lastName")).to.eql("Oliver");
       });
     });
 
